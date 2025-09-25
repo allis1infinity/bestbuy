@@ -65,7 +65,6 @@ class Product:
     def show(self):
         """
         Prints a string that represents the product.
-        Example: "MacBook Air M2, Price: 1450, Quantity: 100"
         """
         print(f"{self.name}, Price: {self.price}, Quantity: {self.quantity}")
 
