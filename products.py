@@ -16,11 +16,11 @@ class Product:
 
         # Ensure price is a non-negative number.
         if not isinstance(price, (int, float)) or price < 0:
-            raise TypeError('Price must be a non-negative number')
+            raise TypeError('Invalid price: a non-negative number is expected.')
 
         # Ensure quantity is a non-negative integer.
         if not isinstance(quantity, int) or quantity < 0:
-            raise TypeError('Quantity must be a non-negative integer')
+            raise TypeError('Invalid quantity: a non-negative number is expected')
 
         self.name = name
         self.price = price
@@ -37,11 +37,7 @@ class Product:
         """
         Setter function for quantity. If quantity reaches 0, deactivates the product.
         """
-        if not isinstance(quantity, int) or quantity < 0:
-            raise TypeError("Quantity must be a non-negative integer.")
-
-        self.quantity = quantity
-        if self.quantity == 0:
+        if self.quantity <= 0:
             self.deactivate()
 
     def is_active(self) -> bool:
